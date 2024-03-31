@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INPUT VALIDATION / BRANCHING</title>
+</head>
+<body>
+    <input
+        id="input-Phone" 
+        type="text" 
+        size="30" 
+        placeholder="Enter your number">
+    <button onclick="validate()">GO</button>
+    <script>
+        function validate() {
+            let fullNumber = inputPhone.value
+            if (fullNumber.startsWith('+373-')) {
+                let regionalNumber = fullNumber.substring(5)
+                if (regionalNumber.startsWith('22-')) {
+                    let number = regionalNumber.substring(3)
+                    if (
+                        '0' <= number[0] && number[0] <= '9' &&
+                        '0' <= number[2] && number[2] <= '9' &&
+                        '0' <= number[1] && number[1] <= '9' &&
+                        '0' <= number[4] && number[4] <= '9' &&
+                        '0' <= number[3] && number[3] <= '9' &&
+                        '0' <= number[5] && number[5] <= '9' 
+                    ) {
+                        alert("SUCCESS!")
+                    }
+                    else {
+                        alert('ERROR: Wrong number format!')
+                    }
+                }
+                    
+                else {
+                    alert('ERROR: Only Chisinau numbers allowed!')
+                }
+            }
+            else {
+                alert('ERROR: Only Moldova numbers allowed!')
+            }
+        }
+        function validate() {
+            if (fullNumber.startsWith('+373-')) {
+                    let regionalNumber = fullNumber.substring(5) 
+                    if (regionalNumber.startsWith('6')) {
+                        let number = regionalNumber.substring(1)
+                        if (
+                            '0' <= number[0] && number[0] <= '9' &&
+                            '0' <= number[1] && number[1] <= '9' &&
+                            '0' <= number[2] && number[2] <= '9' &&
+                            '0' <= number[3] && number[3] <= '9' &&
+                            '0' <= number[4] && number[4] <= '9' &&
+                            '0' <= number[5] && number[5] <= '9' &&
+                            '0' <= number[6] && number[6] <= '9' &&
+                            '0' <= number[7] && number[7] <= '9'
+                        ) {
+                            alert('SUCCESS!')
+                        }
+                        else {
+                            alert('ERROR: Wrong number format!')
+                        }
+                    }
+                    else {
+                        alert("ERROR: Only mobile number!")
+                    }
+            }
+            else {
+                alert("ERROR: Only Moldova mobile number!" )
+            }
+        }
+    </script>
+</body>
+</html>
