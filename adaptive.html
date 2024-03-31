@@ -1,0 +1,21 @@
+<script>
+    const large = 1200
+    const medium = 980
+    const small = 560
+    const Error_Small = 60
+    const Error_Large = 3000
+    let windowWidth = innerWidth
+    if (windowWidth > Error_Large) {
+        alert("ERROR: Window is undefined")
+    } else if (windowWidth >= large) {
+        alert("Large window: " + innerWidth + "px")
+    } else if (windowWidth >= medium && windowWidth < large) {
+        alert("Medium window: " + innerWidth + "px")
+    } else if (windowWidth >= small && windowWidth < medium) {
+        alert("Small window: " + windowWidth + "px")
+    } else if(windowWidth < small) {
+        alert("Extra Small window: " + windowWidth + "px")
+    } else if(windowWidth < Error_Small) {
+        alert("ERROR: Window is undefined")
+    }
+</script>
